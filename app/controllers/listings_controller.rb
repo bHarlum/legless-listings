@@ -23,6 +23,9 @@ class ListingsController < ApplicationController
     def show
         #show a single listing
     end
+
+    private
+    
     def set_listing
         @listing = Listing.find(params[:id])
     end
