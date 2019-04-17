@@ -19,6 +19,7 @@ class ListingsController < ApplicationController
     end
     def new
         #create a new listing
+        @listing = Listing.new
     end
     def show
         #show a single listing
