@@ -38,4 +38,11 @@
     <div>
         <%= form.submit %>
     </div>
+    <div>
+        <% if @listing.errors.any? %>
+            <% @listing.errors.full_messages.each do |form|%>
+                <p><%=form%></p>
+            <%end%>
+        <%end%>
+    </div>
 <%end%>
