@@ -1,0 +1,46 @@
+<%= form_with model: listing, local: true do |form| %>
+    <div>
+        <div><%= form.label :title  %></div>
+        <%= form.text_field :title %>
+    </div>
+    <div>
+        <div><%= form.label :description  %></div>
+        <%= form.text_area :description %>
+    </div>
+    <div>
+        <div><%= form.label :price  %></div>
+        <%= form.number_field :price, min: 0 %>
+    </div>
+    <div>
+        <div><%= form.label :deposit  %></div>
+        <%= form.number_field :deposit, min: 0 %>
+    </div>
+    <div>
+        <div><%= form.label :date_of_birth  %></div>
+        <%= form.date_field :date_of_birth %>
+    </div>
+    <div>
+        <div><%= form.label :diet  %></div>
+        <%= form.text_field :diet %>
+    </div>
+    <div>
+        <div><%= form.label :breed_id  %></div>
+        <%= form.select(:breed_id, @breeds.map { |breed| [breed.name, breed.id]} ) %>
+    </div>
+    <div>
+        <% @sexes.each do |option|  %>
+            <%= form.radio_button :sex, option %>
+            <%= form.label "sex_#{option}".to_sym %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+    <div>
+        <% if listing.errors.any? %>
+            <% listing.errors.full_messages.each do |form|%>
+                <p><%=form%></p>
+            <%end%>
+        <%end%>
+    </div>
+<%end%>

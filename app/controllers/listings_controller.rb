@@ -19,7 +19,7 @@ class ListingsController < ApplicationController
 
     def index
         #show all listings
-        @listing = Listings.all
+        @listings = Listing.all
     end
 
     def edit
