@@ -33,6 +33,12 @@
             <%= form.label "sex_#{option}".to_sym %>
         <% end %>
     </div>
+
+    <div>
+        <div><%= form.label :picture  %></div>
+        <%= form.file_field :picture, accet: "image/png,image/gif,image/jpeg,image/jpg" %>
+    </div>
+
     <div>
         <%= form.submit %>
     </div>
